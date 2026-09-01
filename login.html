@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Login | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/login.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="login-page">
+
+
+    <!-- LEFT SIDE -->
+
+    <section class="school-section">
+
+        <div class="school-content">
+
+            <div class="school-logo">
+                KSS
+            </div>
+
+            <h1>
+                A.KOLFE
+            </h1>
+
+            <h2>
+                SECONDARY SCHOOL
+            </h2>
+
+            <p>
+                School Management System
+            </p>
+
+            <span>
+                Addis Ababa, Ethiopia
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <section class="login-section">
+
+        <div class="login-box">
+
+
+            <div class="mobile-logo">
+                KSS
+            </div>
+
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p class="subtitle">
+                Sign in to your school account
+            </p>
+
+
+
+            <form id="loginForm">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="login-options">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a href="#">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Sign In
+                </button>
+
+
+
+                <div
+                    class="error-message"
+                    id="errorMessage"
+                >
+                </div>
+
+            </form>
+
+
+
+            <!-- DEMO ACCOUNTS -->
+
+            <div class="demo">
+
+                <strong>
+                    Demo accounts
+                </strong>
+
+                <p>
+                    Administrator:
+                    <b>admin</b> /
+                    <b>admin123</b>
+                </p>
+
+                <p>
+                    Student:
+                    <b>student</b> /
+                    <b>student123</b>
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="js/login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard | Kolfe Secondary School</title>
+
+    <link rel="stylesheet" href="css/parent-dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="school-brand">
+            <div class="logo">KSS</div>
+
+            <div>
+                <strong>KOLFE</strong>
+                <small>SECONDARY SCHOOL</small>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+                🏠 <span>Dashboard</span>
+            </a>
+
+            <a href="#">
+                👤 <span>My Profile</span>
+            </a>
+
+            <a href="#">
+                👨‍🎓 <span>My Children</span>
+            </a>
+
+            <a href="#">
+                📊 <span>Grades & Results</span>
+            </a>
+
+            <a href="#">
+                ✅ <span>Attendance</span>
+            </a>
+
+            <a href="#">
+                📅 <span>Timetable</span>
+            </a>
+
+            <a href="#">
+                📝 <span>Assignments</span>
+            </a>
+
+            <a href="#">
+                💳 <span>Fees & Payments</span>
+            </a>
+
+            <a href="#">
+                📢 <span>Announcements</span>
+            </a>
+
+            <a href="#">
+                💬 <span>Messages</span>
+            </a>
+
+            <a href="#">
+                🔔 <span>Notifications</span>
+                <b>3</b>
+            </a>
+
+        </nav>
+
+        <button class="logout" id="logoutButton">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <button id="menuButton" class="menu">
+                ☰
+            </button>
+
+            <div>
+                <h1>Parent Dashboard</h1>
+                <p>2019 E.C. Academic Year</p>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification">
+                    🔔
+                    <span>3</span>
+                </button>
+
+                <div class="parent-profile">
+
+                    <div class="avatar">
+                        AB
+                    </div>
+
+                    <div>
+                        <strong>Abebe Birhanu</strong>
+                        <small>Parent / Guardian</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- WELCOME -->
+            <div class="welcome">
+
+                <div>
+                    <p>WELCOME BACK 👋</p>
+
+                    <h2>Hello, Abebe Birhanu</h2>
+
+                    <span>
+                        Monitor your child's academic progress and school activities.
+                    </span>
+                </div>
+
+                <div class="welcome-icon">
+                    👨‍👩‍👧
+                </div>
+
+            </div>
+
+
+            <!-- CHILD SELECTOR -->
+            <div class="child-selector">
+
+                <div>
+                    <span>Selected Student</span>
+
+                    <strong>Abebe Student</strong>
+
+                    <small>
+                        Grade 9 • Section 2 • Student ID: KSS-0001
+                    </small>
+                </div>
+
+                <select id="childSelect">
+
+                    <option>Abebe Student - Grade 9</option>
+                    <option>Other Student</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="icon blue">📊</div>
+
+                    <div>
+                        <small>Average Grade</small>
+                        <strong>82%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="icon green">✅</div>
+
+                    <div>
+                        <small>Attendance</small>
+                        <strong>94%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="icon gold">📝</div>
+
+                    <div>
+                        <small>Assignments</small>
+                        <strong>3 Pending</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="icon red">💳</div>
+
+                    <div>
+                        <small>Remaining Fees</small>
+                        <strong>250 ETB</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TWO COLUMNS -->
+            <div class="grid">
+
+
+                <!-- ACADEMIC PERFORMANCE -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Academic Performance</h3>
+                            <p>Recent subject results</p>
+                        </div>
+
+                        <button>View All</button>
+
+                    </div>
+
+
+                    <div class="grades">
+
+                        <div>
+                            <span>Mathematics</span>
+                            <strong>88%</strong>
+                        </div>
+
+                        <div>
+                            <span>Biology</span>
+                            <strong>84%</strong>
+                        </div>
+
+                        <div>
+                            <span>English</span>
+                            <strong>79%</strong>
+                        </div>
+
+                        <div>
+                            <span>Chemistry</span>
+                            <strong>81%</strong>
+                        </div>
+
+                        <div>
+                            <span>Physics</span>
+                            <strong>80%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATTENDANCE -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Attendance</h3>
+                            <p>This academic year</p>
+                        </div>
+
+                        <button>Details</button>
+
+                    </div>
+
+
+                    <div class="attendance">
+
+                        <div class="attendance-circle">
+                            <strong>94%</strong>
+                            <span>Present</span>
+                        </div>
+
+                        <div class="attendance-details">
+
+                            <p>
+                                <span class="dot present"></span>
+                                Present
+                                <strong>94%</strong>
+                            </p>
+
+                            <p>
+                                <span class="dot absent"></span>
+                                Absent
+                                <strong>4%</strong>
+                            </p>
+
+                            <p>
+                                <span class="dot late"></span>
+                                Late
+                                <strong>2%</strong>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ASSIGNMENTS + ANNOUNCEMENTS -->
+            <div class="grid">
+
+
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Pending Assignments</h3>
+                            <p>Assignments requiring attention</p>
+                        </div>
+
+                        <button>View All</button>
+
+                    </div>
+
+
+                    <div class="assignment">
+
+                        <span>🧬</span>
+
+                        <div>
+                            <strong>Biology Assignment</strong>
+                            <small>Cell Structure</small>
+                        </div>
+
+                        <b>Sep 05</b>
+
+                    </div>
+
+
+                    <div class="assignment">
+
+                        <span>📐</span>
+
+                        <div>
+                            <strong>Mathematics Homework</strong>
+                            <small>Algebra</small>
+                        </div>
+
+                        <b>Sep 07</b>
+
+                    </div>
+
+
+                    <div class="assignment">
+
+                        <span>⚗️</span>
+
+                        <div>
+                            <strong>Chemistry Report</strong>
+                            <small>Laboratory Work</small>
+                        </div>
+
+                        <b>Sep 10</b>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>School Announcements</h3>
+                            <p>Latest information</p>
+                        </div>
+
+                        <button>View All</button>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <span>📢</span>
+
+                        <div>
+                            <strong>Examination Information</strong>
+                            <p>New examination information is available.</p>
+                            <small>2 hours ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <span>📅</span>
+
+                        <div>
+                            <strong>Parents Meeting</strong>
+                            <p>Parents meeting will be held soon.</p>
+                            <small>Yesterday</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <span>🏆</span>
+
+                        <div>
+                            <strong>Science Competition</strong>
+                            <p>Students can register for the competition.</p>
+                            <small>3 days ago</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEES -->
+            <div class="card fees-card">
+
+                <div class="card-title">
+
+                    <div>
+                        <h3>School Fees</h3>
+                        <p>Current payment status</p>
+                    </div>
+
+                    <button>Payment History</button>
+
+                </div>
+
+
+                <div class="fee-grid">
+
+                    <div>
+                        <small>Total Fees</small>
+                        <strong>650 ETB</strong>
+                    </div>
+
+                    <div>
+                        <small>Paid</small>
+                        <strong class="paid">400 ETB</strong>
+                    </div>
+
+                    <div>
+                        <small>Remaining</small>
+                        <strong class="remaining">250 ETB</strong>
+                    </div>
+
+                    <button class="pay-button" id="payButton">
+                        💳 Make Payment
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT METHODS -->
+            <div class="card payment-card">
+
+                <h3>Available Payment Methods</h3>
+
+                <div class="payment-methods">
+
+                    <div>🏦 CBE</div>
+                    <div>📱 Telebirr</div>
+                    <div>🏦 Nib Bank</div>
+                    <div>🏦 Awash Bank</div>
+                    <div>🏦 Abissinia Bank</div>
+                    <div>📱 M-Pesa</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/parent-dashboard.js"></script>
+
+</body>
+</html>

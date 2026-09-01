@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Management | A.Kolfe Secondary School</title>
+
+    <link rel="stylesheet" href="css/teachers.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">KSS</div>
+
+        <div>
+            <strong>A.KOLFE</strong>
+            <small>SECONDARY SCHOOL</small>
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">AB</div>
+
+        <div>
+            <strong>AMARE BIRHANU</strong>
+            <small>Administrator</small>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <div>
+            <h1>Teacher Management</h1>
+
+            <p>
+                Manage teachers of A.Kolfe Secondary School
+            </p>
+        </div>
+
+
+        <button
+            class="primary-btn"
+            id="addTeacherBtn">
+
+            + Add Teacher
+
+        </button>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <span>👨‍🏫</span>
+
+            <div>
+                <small>Total Teachers</small>
+
+                <strong id="totalTeachers">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>🧑‍🏫</span>
+
+            <div>
+                <small>Male Teachers</small>
+
+                <strong id="maleTeachers">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>👩‍🏫</span>
+
+            <div>
+                <small>Female Teachers</small>
+
+                <strong id="femaleTeachers">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>📚</span>
+
+            <div>
+                <small>Subjects</small>
+
+                <strong id="subjectCount">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="tools">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search by name or teacher ID..."
+        >
+
+
+        <select id="subjectFilter">
+
+            <option value="">
+                All Subjects
+            </option>
+
+            <option>Biology</option>
+
+            <option>Mathematics</option>
+
+            <option>English</option>
+
+            <option>Chemistry</option>
+
+            <option>Physics</option>
+
+            <option>HPE</option>
+
+            <option>Citizenship</option>
+
+        </select>
+
+
+        <select id="gradeFilter">
+
+            <option value="">
+                All Grades
+            </option>
+
+            <option value="9">
+                Grade 9
+            </option>
+
+            <option value="10">
+                Grade 10
+            </option>
+
+            <option value="11">
+                Grade 11
+            </option>
+
+            <option value="12">
+                Grade 12
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- TABLE -->
+
+    <section class="table-card">
+
+
+        <div class="table-header">
+
+            <div>
+
+                <h2>Teachers</h2>
+
+                <p id="resultCount">
+                    0 teachers
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Teacher ID</th>
+
+                        <th>Name</th>
+
+                        <th>Gender</th>
+
+                        <th>Subject</th>
+
+                        <th>Grades</th>
+
+                        <th>Phone</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="teacherTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ADD / EDIT MODAL -->
+
+<div class="modal" id="teacherModal">
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Teacher
+                </h2>
+
+                <p>
+                    Enter teacher information
+                </p>
+
+            </div>
+
+
+            <button id="closeModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="teacherForm">
+
+
+            <input
+                type="hidden"
+                id="teacherIndex"
+            >
+
+
+            <div class="form-grid">
+
+
+                <div>
+
+                    <label>
+                        Teacher ID
+                    </label>
+
+                    <input
+                        id="teacherId"
+                        placeholder="KSS-T001"
+                        required
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        id="teacherName"
+                        placeholder="Teacher full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Gender
+                    </label>
+
+                    <select id="gender" required>
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option>
+                            Male
+                        </option>
+
+                        <option>
+                            Female
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Subject
+                    </label>
+
+                    <select id="subject" required>
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                        <option>
+                            Biology
+                        </option>
+
+                        <option>
+                            Mathematics
+                        </option>
+
+                        <option>
+                            English
+                        </option>
+
+                        <option>
+                            Chemistry
+                        </option>
+
+                        <option>
+                            Physics
+                        </option>
+
+                        <option>
+                            HPE
+                        </option>
+
+                        <option>
+                            Citizenship
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Grades
+                    </label>
+
+                    <input
+                        id="grades"
+                        placeholder="9, 10"
+                        required
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Phone
+                    </label>
+
+                    <input
+                        id="phone"
+                        type="tel"
+                        placeholder="09XXXXXXXX"
+                        required
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="teacher@example.com"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Employment Year
+                    </label>
+
+                    <input
+                        id="employmentYear"
+                        value="2019 E.C."
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelBtn">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Save Teacher
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/teachers.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+</body>
+
+</html>

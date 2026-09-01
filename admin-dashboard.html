@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | A.Kolfe Secondary School</title>
+
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+    <div class="sidebar-logo">
+        <div class="logo">KSS</div>
+
+        <div>
+            <strong>A.KOLFE</strong>
+            <small>SECONDARY SCHOOL</small>
+        </div>
+    </div>
+
+
+    <nav class="sidebar-menu">
+
+        <p class="menu-title">MAIN</p>
+
+        <a href="admin-dashboard.html" class="menu-link active">
+            🏠
+            <span>Dashboard</span>
+        </a>
+
+
+        <p class="menu-title">ACADEMIC</p>
+
+        <a href="./students.html" class="menu-link">
+    👨‍🎓
+    <span>Students</span>
+</a>
+        <a href="teachers.html" class="menu-link">
+            👨‍🏫
+            <span>Teachers</span>
+        </a>
+
+        <a href="classes.html" class="menu-link">
+            🏫
+            <span>Classes</span>
+        </a>
+
+        <a href="subjects.html" class="menu-link">
+            📚
+            <span>Subjects</span>
+        </a>
+
+        <a href="attendance.html" class="menu-link">
+            📋
+            <span>Attendance</span>
+        </a>
+
+        <a href="results.html" class="menu-link">
+            📊
+            <span>Results</span>
+        </a>
+
+        <a href="timetable.html" class="menu-link">
+            📅
+            <span>Timetable</span>
+        </a>
+
+
+        <p class="menu-title">SCHOOL</p>
+
+        <a href="announcements.html" class="menu-link">
+            📢
+            <span>Announcements</span>
+        </a>
+
+        <a href="parents.html" class="menu-link">
+            👪
+            <span>Parents</span>
+        </a>
+
+        <a href="payments.html" class="menu-link">
+            💳
+            <span>Payments</span>
+        </a>
+
+        <a href="report-cards.html" class="menu-link">
+            📝
+            <span>Report Cards</span>
+        </a>
+
+
+        <p class="menu-title">ACCOUNT</p>
+
+        <a href="settings.html" class="menu-link">
+            ⚙️
+            <span>Settings</span>
+        </a>
+
+        <a href="login.html" class="menu-link logout">
+            🚪
+            <span>Logout</span>
+        </a>
+
+    </nav>
+
+</aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <button class="menu" id="menuButton">☰</button>
+
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>2019 E.C. Academic Year</p>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification">
+                    🔔
+                    <span>5</span>
+                </button>
+
+                <div class="admin-profile">
+
+                    <div class="avatar">AB</div>
+
+                    <div>
+                        <strong>AMARE BIRHANU</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- WELCOME -->
+            <div class="welcome">
+
+                <div>
+                    <p>SCHOOL ADMINISTRATION 👋</p>
+
+                    <h2>Welcome, Amare Birhanu</h2>
+
+                    <span>
+                        Manage A.Kolfe Secondary School from one place.
+                    </span>
+                </div>
+
+                <div class="welcome-icon">🏫</div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats">
+
+                <div class="stat">
+                    <div class="icon blue">👨‍🎓</div>
+
+                    <div>
+                        <small>Total Students</small>
+                        <strong>100</strong>
+                    </div>
+                </div>
+
+
+                <div class="stat">
+                    <div class="icon green">👨‍🏫</div>
+
+                    <div>
+                        <small>Total Teachers</small>
+                        <strong>34</strong>
+                    </div>
+                </div>
+
+
+                <div class="stat">
+                    <div class="icon gold">🏫</div>
+
+                    <div>
+                        <small>Grade Levels</small>
+                        <strong>9 - 12</strong>
+                    </div>
+                </div>
+
+
+                <div class="stat">
+                    <div class="icon red">👪</div>
+
+                    <div>
+                        <small>Parents</small>
+                        <strong>87</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+            <div class="card">
+
+                <div class="card-title">
+                    <div>
+                        <h3>Quick Actions</h3>
+                        <p>Common administration tasks</p>
+                    </div>
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button data-action="student">
+                        <span>👨‍🎓</span>
+                        Add Student
+                    </button>
+
+                    <button data-action="teacher">
+                        <span>👨‍🏫</span>
+                        Add Teacher
+                    </button>
+
+                    <button data-action="class">
+                        <span>🏫</span>
+                        Create Class
+                    </button>
+
+                    <button data-action="announcement">
+                        <span>📢</span>
+                        Announcement
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STUDENTS + ATTENDANCE -->
+            <div class="grid">
+
+
+                <!-- RECENT STUDENTS -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Recent Students</h3>
+                            <p>Recently registered students</p>
+                        </div>
+
+                        <button>View All</button>
+
+                    </div>
+
+
+                    <div class="student-list">
+
+                        <div class="student">
+
+                            <div class="student-avatar">AS</div>
+
+                            <div>
+                                <strong>Abebe Student</strong>
+                                <small>KSS-0001 • Grade 9</small>
+                            </div>
+
+                            <span class="active-status">Active</span>
+
+                        </div>
+
+
+                        <div class="student">
+
+                            <div class="student-avatar">HS</div>
+
+                            <div>
+                                <strong>Hana Student</strong>
+                                <small>KSS-0002 • Grade 9</small>
+                            </div>
+
+                            <span class="active-status">Active</span>
+
+                        </div>
+
+
+                        <div class="student">
+
+                            <div class="student-avatar">DS</div>
+
+                            <div>
+                                <strong>Dawit Student</strong>
+                                <small>KSS-0003 • Grade 10</small>
+                            </div>
+
+                            <span class="active-status">Active</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATTENDANCE -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Today's Attendance</h3>
+                            <p>School-wide attendance</p>
+                        </div>
+
+                        <button>Details</button>
+
+                    </div>
+
+
+                    <div class="attendance-number">
+                        92%
+                        <small>Overall Present</small>
+                    </div>
+
+
+                    <div class="attendance-bars">
+
+                        <div>
+                            <span>Present</span>
+                            <strong>92%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <i style="width:92%"></i>
+                        </div>
+
+
+                        <div>
+                            <span>Absent</span>
+                            <strong>5%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <i style="width:5%"></i>
+                        </div>
+
+
+                        <div>
+                            <span>Late</span>
+                            <strong>3%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <i style="width:3%"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCHOOL OVERVIEW -->
+            <div class="card">
+
+                <div class="card-title">
+
+                    <div>
+                        <h3>School Overview</h3>
+                        <p>Current academic structure</p>
+                    </div>
+
+                </div>
+
+
+                <div class="overview">
+
+                    <div>
+                        <span>🎓</span>
+                        <strong>4</strong>
+                        <small>Grade Levels</small>
+                    </div>
+
+                    <div>
+                        <span>🏫</span>
+                        <strong>8</strong>
+                        <small>Sections</small>
+                    </div>
+
+                    <div>
+                        <span>📚</span>
+                        <strong>8</strong>
+                        <small>Subjects</small>
+                    </div>
+
+                    <div>
+                        <span>👨‍🏫</span>
+                        <strong>34</strong>
+                        <small>Teachers</small>
+                    </div>
+
+                    <div>
+                        <span>👨‍🎓</span>
+                        <strong>100</strong>
+                        <small>Students</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENTS + ANNOUNCEMENTS -->
+            <div class="grid">
+
+
+                <!-- PAYMENTS -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Fee Payments</h3>
+                            <p>Current school payment overview</p>
+                        </div>
+
+                        <button>View Payments</button>
+
+                    </div>
+
+
+                    <div class="payment-summary">
+
+                        <div>
+                            <small>Total Expected</small>
+                            <strong>65,000 ETB</strong>
+                        </div>
+
+                        <div>
+                            <small>Collected</small>
+                            <strong class="collected">40,000 ETB</strong>
+                        </div>
+
+                        <div>
+                            <small>Remaining</small>
+                            <strong class="remaining">25,000 ETB</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-methods">
+
+                        <span>CBE</span>
+                        <span>Telebirr</span>
+                        <span>Nib</span>
+                        <span>Awash</span>
+                        <span>Abissinia</span>
+                        <span>M-Pesa</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANNOUNCEMENTS -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Announcements</h3>
+                            <p>Recent school notices</p>
+                        </div>
+
+                        <button>Manage</button>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <span>📢</span>
+
+                        <div>
+                            <strong>Examination Schedule</strong>
+                            <p>The examination schedule has been published.</p>
+                            <small>2 hours ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <span>👥</span>
+
+                        <div>
+                            <strong>Parents Meeting</strong>
+                            <p>Parents meeting information is available.</p>
+                            <small>Yesterday</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="announcement">
+
+                        <span>🏆</span>
+
+                        <div>
+                            <strong>Science Competition</strong>
+                            <p>Students can register for the competition.</p>
+                            <small>3 days ago</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECTS -->
+            <div class="card">
+
+                <div class="card-title">
+
+                    <div>
+                        <h3>School Subjects</h3>
+                        <p>Subjects currently offered</p>
+                    </div>
+
+                    <button>Manage Subjects</button>
+
+                </div>
+
+
+                <div class="subjects">
+
+                    <span>Biology</span>
+                    <span>Mathematics</span>
+                    <span>English</span>
+                    <span>Chemistry</span>
+                    <span>Physics</span>
+                    <span>HPE</span>
+                    <span>Citizenship</span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

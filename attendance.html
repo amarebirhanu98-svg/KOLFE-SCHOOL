@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Attendance | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./css/attendance.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            KSS
+        </div>
+
+        <div class="brand-text">
+
+            <strong>
+                A.KOLFE
+            </strong>
+
+            <small>
+                SECONDARY SCHOOL
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">
+            AB
+        </div>
+
+        <div class="admin-text">
+
+            <strong>
+                AMARE BIRHANU
+            </strong>
+
+            <small>
+                Administrator
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Attendance
+            </h1>
+
+            <p>
+                Record and manage student attendance
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="saveAttendanceBtn"
+        >
+            💾 Save Attendance
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================
+         FILTERS
+    ======================================= -->
+
+    <section class="filter-card">
+
+
+        <div class="filter-group">
+
+            <label for="attendanceDate">
+                Date
+            </label>
+
+            <input
+                type="date"
+                id="attendanceDate"
+            >
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="gradeFilter">
+                Grade
+            </label>
+
+            <select id="gradeFilter">
+
+                <option value="Grade 9">
+                    Grade 9
+                </option>
+
+                <option value="Grade 10">
+                    Grade 10
+                </option>
+
+                <option value="Grade 11">
+                    Grade 11
+                </option>
+
+                <option value="Grade 12">
+                    Grade 12
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="classFilter">
+                Class
+            </label>
+
+            <select id="classFilter">
+
+                <option value="1">
+                    Class 1
+                </option>
+
+                <option value="2">
+                    Class 2
+                </option>
+
+                <option value="3">
+                    Class 3
+                </option>
+
+                <option value="4">
+                    Class 4
+                </option>
+
+                <option value="5">
+                    Class 5
+                </option>
+
+            </select>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         STATISTICS
+    ======================================= -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+
+                <small>
+                    Total Students
+                </small>
+
+                <strong id="totalStudents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card present-card">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <small>
+                    Present
+                </small>
+
+                <strong id="presentCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card absent-card">
+
+            <div class="stat-icon">
+                ❌
+            </div>
+
+            <div>
+
+                <small>
+                    Absent
+                </small>
+
+                <strong id="absentCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card late-card">
+
+            <div class="stat-icon">
+                🕐
+            </div>
+
+            <div>
+
+                <small>
+                    Late
+                </small>
+
+                <strong id="lateCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         SEARCH
+    ======================================= -->
+
+    <section class="search-card">
+
+        <div class="search-box">
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search student by name or ID..."
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         ATTENDANCE TABLE
+    ======================================= -->
+
+    <section class="attendance-card">
+
+
+        <div class="table-header">
+
+            <div>
+
+                <h2>
+                    Student Attendance
+                </h2>
+
+                <p id="classTitle">
+                    Grade 9 — Class 1
+                </p>
+
+            </div>
+
+
+            <div class="attendance-legend">
+
+                <span>
+                    ✅ Present
+                </span>
+
+                <span>
+                    ❌ Absent
+                </span>
+
+                <span>
+                    🕐 Late
+                </span>
+
+                <span>
+                    📝 Excused
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            #
+                        </th>
+
+                        <th>
+                            Student
+                        </th>
+
+                        <th>
+                            Student ID
+                        </th>
+
+                        <th>
+                            Attendance
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="attendanceTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="./js/attendance.js"></script>
+
+
+</body>
+
+</html>

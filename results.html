@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Results | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./css/results.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            KSS
+        </div>
+
+        <div class="brand-text">
+
+            <strong>
+                A.KOLFE
+            </strong>
+
+            <small>
+                SECONDARY SCHOOL
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">
+            AB
+        </div>
+
+        <div class="admin-text">
+
+            <strong>
+                AMARE BIRHANU
+            </strong>
+
+            <small>
+                Administrator
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Results & Grades
+            </h1>
+
+            <p>
+                Enter and manage student academic results
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="saveResultsBtn"
+        >
+            💾 Save Results
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================
+         FILTERS
+    ======================================= -->
+
+    <section class="filter-card">
+
+
+        <div class="filter-group">
+
+            <label for="gradeFilter">
+                Grade
+            </label>
+
+            <select id="gradeFilter">
+
+                <option value="Grade 9">
+                    Grade 9
+                </option>
+
+                <option value="Grade 10">
+                    Grade 10
+                </option>
+
+                <option value="Grade 11">
+                    Grade 11
+                </option>
+
+                <option value="Grade 12">
+                    Grade 12
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="classFilter">
+                Class
+            </label>
+
+            <select id="classFilter">
+
+                <option value="1">
+                    Class 1
+                </option>
+
+                <option value="2">
+                    Class 2
+                </option>
+
+                <option value="3">
+                    Class 3
+                </option>
+
+                <option value="4">
+                    Class 4
+                </option>
+
+                <option value="5">
+                    Class 5
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="subjectFilter">
+                Subject
+            </label>
+
+            <select id="subjectFilter">
+
+                <option value="Mathematics">
+                    Mathematics
+                </option>
+
+                <option value="Biology">
+                    Biology
+                </option>
+
+                <option value="English">
+                    English
+                </option>
+
+                <option value="Chemistry">
+                    Chemistry
+                </option>
+
+                <option value="Physics">
+                    Physics
+                </option>
+
+                <option value="HPE">
+                    HPE
+                </option>
+
+                <option value="Citizenship">
+                    Citizenship
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="examType">
+                Exam
+            </label>
+
+            <select id="examType">
+
+                <option value="Midterm">
+                    Midterm
+                </option>
+
+                <option value="Final">
+                    Final
+                </option>
+
+                <option value="Quiz">
+                    Quiz
+                </option>
+
+                <option value="Assignment">
+                    Assignment
+                </option>
+
+            </select>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         STATISTICS
+    ======================================= -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+
+                <small>
+                    Students
+                </small>
+
+                <strong id="totalStudents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+            <div>
+
+                <small>
+                    Class Average
+                </small>
+
+                <strong id="classAverage">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🏆
+            </div>
+
+            <div>
+
+                <small>
+                    Highest Mark
+                </small>
+
+                <strong id="highestMark">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <small>
+                    Passed
+                </small>
+
+                <strong id="passedCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         SEARCH
+    ======================================= -->
+
+    <section class="search-card">
+
+        <div class="search-box">
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search student by name or ID..."
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         RESULTS TABLE
+    ======================================= -->
+
+    <section class="results-card">
+
+
+        <div class="table-header">
+
+            <div>
+
+                <h2>
+                    Student Results
+                </h2>
+
+                <p id="classTitle">
+                    Grade 9 — Class 1 — Mathematics
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            #
+                        </th>
+
+                        <th>
+                            Student
+                        </th>
+
+                        <th>
+                            Student ID
+                        </th>
+
+                        <th>
+                            Mark
+                        </th>
+
+                        <th>
+                            Grade
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="resultsTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- ==========================================
+     MARK MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="markModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Enter Student Mark
+                </h2>
+
+                <p id="modalStudentName">
+                    Student
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-btn"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <form id="markForm">
+
+
+            <input
+                type="hidden"
+                id="studentId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Mark
+                </label>
+
+                <input
+                    type="number"
+                    id="markInput"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    required
+                >
+
+                <small>
+                    Enter a mark between 0 and 100.
+                </small>
+
+            </div>
+
+
+
+            <div class="mark-preview">
+
+                <span>
+                    Grade
+                </span>
+
+                <strong id="gradePreview">
+                    -
+                </strong>
+
+            </div>
+
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Mark
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<script src="./js/results.js"></script>
+  
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+
+</html>

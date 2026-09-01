@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Cards | A.Kolfe Secondary School</title>
+
+    <link rel="stylesheet" href="./css/report-cards.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="logo">KSS</div>
+
+        <div class="brand-text">
+            <strong>A.KOLFE</strong>
+            <small>SECONDARY SCHOOL</small>
+        </div>
+    </div>
+
+    <div class="admin">
+
+        <div class="avatar">AB</div>
+
+        <div class="admin-text">
+            <strong>AMARE BIRHANU</strong>
+            <small>Administrator</small>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+
+        <div>
+            <h1>Report Cards</h1>
+            <p>Generate and print student academic report cards</p>
+        </div>
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="printReportBtn"
+        >
+            🖨️ Print Report
+        </button>
+
+    </section>
+
+
+    <!-- FILTER CARD -->
+    <section class="filter-card">
+
+        <div class="filter-group">
+
+            <label for="gradeFilter">Grade</label>
+
+            <select id="gradeFilter">
+
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
+                <option value="Grade 11">Grade 11</option>
+                <option value="Grade 12">Grade 12</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="classFilter">Class</label>
+
+            <select id="classFilter">
+
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group student-select-group">
+
+            <label for="studentFilter">Student</label>
+
+            <select id="studentFilter">
+
+                <option value="">Select Student</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label for="examFilter">Exam / Term</label>
+
+            <select id="examFilter">
+
+                <option value="Midterm">Midterm</option>
+                <option value="Final">Final</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Assignment">Assignment</option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATISTICS -->
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📚</div>
+
+            <div>
+                <small>Subjects</small>
+                <strong id="subjectCount">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📊</div>
+
+            <div>
+                <small>Average</small>
+                <strong id="averageMark">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🏆</div>
+
+            <div>
+                <small>Highest</small>
+                <strong id="highestMark">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">✅</div>
+
+            <div>
+                <small>Overall Result</small>
+                <strong id="overallResult">-</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REPORT CARD -->
+    <section class="report-wrapper">
+
+        <div class="report-card" id="reportCard">
+
+            <!-- SCHOOL HEADER -->
+            <div class="report-school-header">
+
+                <div class="school-logo">
+                    KSS
+                </div>
+
+                <div class="school-information">
+
+                    <h2>A.KOLFE SECONDARY SCHOOL</h2>
+
+                    <p>STUDENT ACADEMIC REPORT CARD</p>
+
+                    <span id="reportExamTitle">
+                        MIDTERM REPORT
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STUDENT INFORMATION -->
+            <div class="student-information">
+
+                <div class="info-item">
+
+                    <span>Student Name</span>
+                    <strong id="reportStudentName">-</strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span>Student ID</span>
+                    <strong id="reportStudentId">-</strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span>Grade</span>
+                    <strong id="reportGrade">-</strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span>Class</span>
+                    <strong id="reportClass">-</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULTS TABLE -->
+            <div class="report-table-wrapper">
+
+                <table class="report-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th>Subject</th>
+
+                            <th>Mark</th>
+
+                            <th>Grade</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="reportTableBody">
+
+                        <tr>
+                            <td colspan="5" class="empty-report">
+                                Select a student to generate the report card.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                    <tfoot>
+
+                        <tr>
+
+                            <td colspan="2">
+                                <strong>Total</strong>
+                            </td>
+
+                            <td>
+                                <strong id="reportTotal">0</strong>
+                            </td>
+
+                            <td>
+                                <strong id="reportAverage">0</strong>
+                            </td>
+
+                            <td>
+                                <strong id="reportOverallStatus">-</strong>
+                            </td>
+
+                        </tr>
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+            <div class="report-summary">
+
+                <div class="summary-box">
+
+                    <span>Average Mark</span>
+
+                    <strong id="summaryAverage">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-box">
+
+                    <span>Subjects Passed</span>
+
+                    <strong id="summaryPassed">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-box">
+
+                    <span>Subjects Failed</span>
+
+                    <strong id="summaryFailed">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-box">
+
+                    <span>Overall Grade</span>
+
+                    <strong id="summaryGrade">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- REMARK -->
+            <div class="teacher-remark">
+
+                <h3>Teacher's Remark</h3>
+
+                <p id="teacherRemark">
+                    Select a student to view the report.
+                </p>
+
+            </div>
+
+
+            <!-- SIGNATURES -->
+            <div class="signatures">
+
+                <div class="signature">
+
+                    <div class="signature-line"></div>
+
+                    <span>Class Teacher</span>
+
+                </div>
+
+
+                <div class="signature">
+
+                    <div class="signature-line"></div>
+
+                    <span>Principal</span>
+
+                </div>
+
+
+                <div class="signature">
+
+                    <div class="signature-line"></div>
+
+                    <span>Date</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="./js/report-cards.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+</html>

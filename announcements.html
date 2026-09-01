@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Announcements | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/announcements.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            KSS
+        </div>
+
+        <div>
+            <strong>A.KOLFE</strong>
+
+            <small>
+                SECONDARY SCHOOL
+            </small>
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">
+            AB
+        </div>
+
+        <div>
+            <strong>AMARE BIRHANU</strong>
+
+            <small>
+                Administrator
+            </small>
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+                Announcements
+            </h1>
+
+            <p>
+                Create and manage school announcements
+            </p>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            id="addAnnouncementBtn"
+        >
+            + New Announcement
+        </button>
+
+    </div>
+
+
+
+    <!-- STATISTICS -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📢
+            </div>
+
+            <div>
+
+                <small>
+                    Total Announcements
+                </small>
+
+                <strong id="totalAnnouncements">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📌
+            </div>
+
+            <div>
+
+                <small>
+                    Published
+                </small>
+
+                <strong id="publishedAnnouncements">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ⏳
+            </div>
+
+            <div>
+
+                <small>
+                    Scheduled
+                </small>
+
+                <strong id="scheduledAnnouncements">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📅
+            </div>
+
+            <div>
+
+                <small>
+                    Academic Year
+                </small>
+
+                <strong>
+                    2019 E.C.
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SEARCH / FILTER -->
+
+    <section class="filter-card">
+
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search announcements..."
+        >
+
+
+        <select id="categoryFilter">
+
+            <option value="All">
+                All Categories
+            </option>
+
+            <option value="General">
+                General
+            </option>
+
+            <option value="Academic">
+                Academic
+            </option>
+
+            <option value="Exam">
+                Exam
+            </option>
+
+            <option value="Event">
+                Event
+            </option>
+
+            <option value="Important">
+                Important
+            </option>
+
+        </select>
+
+
+        <select id="statusFilter">
+
+            <option value="All">
+                All Status
+            </option>
+
+            <option value="Published">
+                Published
+            </option>
+
+            <option value="Scheduled">
+                Scheduled
+            </option>
+
+        </select>
+
+
+    </section>
+
+
+
+    <!-- ANNOUNCEMENTS -->
+
+    <section class="announcement-card">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    School Announcements
+                </h2>
+
+                <p id="resultCount">
+                    0 announcements
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="announcement-list"
+            id="announcementList"
+        >
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ADD / EDIT MODAL -->
+
+<div
+    class="modal"
+    id="announcementModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    New Announcement
+                </h2>
+
+                <p>
+                    Enter announcement information
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <form id="announcementForm">
+
+
+            <input
+                type="hidden"
+                id="editId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Title
+                </label>
+
+                <input
+                    type="text"
+                    id="announcementTitle"
+                    placeholder="Announcement title"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select
+                        id="category"
+                        required
+                    >
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="General">
+                            General
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Exam">
+                            Exam
+                        </option>
+
+                        <option value="Event">
+                            Event
+                        </option>
+
+                        <option value="Important">
+                            Important
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select
+                        id="status"
+                        required
+                    >
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                        <option value="Scheduled">
+                            Scheduled
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Publish Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="publishDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Target Audience
+                    </label>
+
+                    <select
+                        id="audience"
+                        required
+                    >
+
+                        <option value="Everyone">
+                            Everyone
+                        </option>
+
+                        <option value="Students">
+                            Students
+                        </option>
+
+                        <option value="Teachers">
+                            Teachers
+                        </option>
+
+                        <option value="Parents">
+                            Parents
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Announcement Message
+                </label>
+
+                <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Write your announcement..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+
+            <div class="modal-actions">
+
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Announcement
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script src="js/announcements.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+</body>
+
+</html>

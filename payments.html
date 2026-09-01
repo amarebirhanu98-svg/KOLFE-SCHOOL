@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Fees & Payments | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./css/payments.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            KSS
+        </div>
+
+        <div class="brand-text">
+
+            <strong>
+                A.KOLFE
+            </strong>
+
+            <small>
+                SECONDARY SCHOOL
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">
+            AB
+        </div>
+
+        <div class="admin-text">
+
+            <strong>
+                AMARE BIRHANU
+            </strong>
+
+            <small>
+                Administrator
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Fees & Payments
+            </h1>
+
+            <p>
+                Manage student fees and payment information
+            </p>
+
+        </div>
+
+
+        <div class="header-buttons">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="settingsBtn"
+            >
+                ⚙️ Payment Settings
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="addPaymentBtn"
+            >
+                + Add Payment
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         PAYMENT DESTINATION
+    ======================================= -->
+
+    <section class="payment-destination">
+
+        <div class="destination-icon">
+            🏦
+        </div>
+
+        <div class="destination-info">
+
+            <small>
+                CURRENT SCHOOL PAYMENT ACCOUNT
+            </small>
+
+            <h2 id="currentBankName">
+                CBE
+            </h2>
+
+            <p id="currentAccountInfo">
+                Account information not configured
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="change-btn"
+            id="changePaymentBtn"
+        >
+            Change
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================
+         STATISTICS
+    ======================================= -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div>
+
+                <small>
+                    Total Expected
+                </small>
+
+                <strong id="totalExpected">
+                    0.00
+                </strong>
+
+                <span>
+                    ETB
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💵
+            </div>
+
+            <div>
+
+                <small>
+                    Total Collected
+                </small>
+
+                <strong id="totalCollected">
+                    0.00
+                </strong>
+
+                <span>
+                    ETB
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📌
+            </div>
+
+            <div>
+
+                <small>
+                    Outstanding
+                </small>
+
+                <strong id="totalOutstanding">
+                    0.00
+                </strong>
+
+                <span>
+                    ETB
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <small>
+                    Fully Paid
+                </small>
+
+                <strong id="fullyPaid">
+                    0
+                </strong>
+
+                <span>
+                    Students
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         FILTERS
+    ======================================= -->
+
+    <section class="filter-card">
+
+
+        <div class="filter-group">
+
+            <label>
+                Grade
+            </label>
+
+            <select id="gradeFilter">
+
+                <option value="All">
+                    All Grades
+                </option>
+
+                <option value="Grade 9">
+                    Grade 9
+                </option>
+
+                <option value="Grade 10">
+                    Grade 10
+                </option>
+
+                <option value="Grade 11">
+                    Grade 11
+                </option>
+
+                <option value="Grade 12">
+                    Grade 12
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label>
+                Class
+            </label>
+
+            <select id="classFilter">
+
+                <option value="All">
+                    All Classes
+                </option>
+
+                <option value="1">
+                    Class 1
+                </option>
+
+                <option value="2">
+                    Class 2
+                </option>
+
+                <option value="3">
+                    Class 3
+                </option>
+
+                <option value="4">
+                    Class 4
+                </option>
+
+                <option value="5">
+                    Class 5
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="search-box">
+
+            🔍
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search student..."
+            >
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         PAYMENT TABLE
+    ======================================= -->
+
+    <section class="payments-card">
+
+
+        <div class="table-header">
+
+            <div>
+
+                <h2>
+                    Student Payments
+                </h2>
+
+                <p>
+                    2019 E.C. academic year
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Student
+                        </th>
+
+                        <th>
+                            Grade / Class
+                        </th>
+
+                        <th>
+                            Expected
+                        </th>
+
+                        <th>
+                            Paid
+                        </th>
+
+                        <th>
+                            Balance
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="paymentsTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     ADD PAYMENT MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="paymentModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Add Payment
+                </h2>
+
+                <p id="paymentStudentName">
+                    Student payment
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-btn"
+                id="closePaymentModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="paymentForm">
+
+
+            <input
+                type="hidden"
+                id="paymentStudentId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Student
+                </label>
+
+                <select
+                    id="studentSelect"
+                    required
+                >
+
+                    <option value="">
+                        Select student
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Amount Paid (ETB)
+                </label>
+
+                <input
+                    type="number"
+                    id="amountPaid"
+                    min="0"
+                    step="0.01"
+                    placeholder="Example: 500"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Payment Method
+                </label>
+
+                <select
+                    id="paymentMethod"
+                    required
+                >
+
+                    <option value="">
+                        Select payment method
+                    </option>
+
+                    <option value="CBE">
+                        CBE
+                    </option>
+
+                    <option value="Telebirr">
+                        Telebirr
+                    </option>
+
+                    <option value="Nib">
+                        Nib
+                    </option>
+
+                    <option value="Awash">
+                        Awash
+                    </option>
+
+                    <option value="Abissinya">
+                        Abissinya
+                    </option>
+
+                    <option value="M-Pesa">
+                        M-Pesa
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Reference Number
+                </label>
+
+                <input
+                    type="text"
+                    id="referenceNumber"
+                    placeholder="Optional"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Note
+                </label>
+
+                <textarea
+                    id="paymentNote"
+                    rows="3"
+                    placeholder="Optional note..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelPaymentBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Payment
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     PAYMENT SETTINGS MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="settingsModal"
+>
+
+
+    <div class="modal-box settings-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Payment Settings
+                </h2>
+
+                <p>
+                    Change the school's payment information
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-btn"
+                id="closeSettingsModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <form id="settingsForm">
+
+
+            <div class="form-group">
+
+                <label>
+                    Main Payment Method
+                </label>
+
+                <select id="mainPaymentMethod">
+
+                    <option value="CBE">
+                        CBE
+                    </option>
+
+                    <option value="Telebirr">
+                        Telebirr
+                    </option>
+
+                    <option value="Nib">
+                        Nib
+                    </option>
+
+                    <option value="Awash">
+                        Awash
+                    </option>
+
+                    <option value="Abissinya">
+                        Abissinya
+                    </option>
+
+                    <option value="M-Pesa">
+                        M-Pesa
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Account Name
+                </label>
+
+                <input
+                    type="text"
+                    id="accountName"
+                    placeholder="Example: A.Kolfe Secondary School"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Account Number
+                </label>
+
+                <input
+                    type="text"
+                    id="accountNumber"
+                    placeholder="Enter account number"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="paymentPhone"
+                    placeholder="For Telebirr / M-Pesa"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Payment Instructions
+                </label>
+
+                <textarea
+                    id="paymentInstructions"
+                    rows="4"
+                    placeholder="Example: Use the student's ID as the payment reference."
+                ></textarea>
+
+            </div>
+
+
+            <div class="warning-box">
+
+                ⚠️
+
+                <span>
+                    Only an administrator should change
+                    school payment information.
+                </span>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelSettingsBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Settings
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script src="./js/payments.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Students | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/students.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            KSS
+        </div>
+
+        <div>
+            <strong>A.KOLFE</strong>
+
+            <small>
+                SECONDARY SCHOOL
+            </small>
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">
+            AB
+        </div>
+
+        <div>
+            <strong>AMARE BIRHANU</strong>
+
+            <small>
+                Administrator
+            </small>
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+                Students
+            </h1>
+
+            <p>
+                Manage students enrolled at A.Kolfe Secondary School
+            </p>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            id="addStudentBtn"
+        >
+            + Add Student
+        </button>
+
+    </div>
+
+
+
+    <!-- STATISTICS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <span>👨‍🎓</span>
+
+            <div>
+
+                <small>
+                    Total Students
+                </small>
+
+                <strong id="totalStudents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>9️⃣</span>
+
+            <div>
+
+                <small>
+                    Grade 9
+                </small>
+
+                <strong id="grade9Count">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>🔟</span>
+
+            <div>
+
+                <small>
+                    Grade 10
+                </small>
+
+                <strong id="grade10Count">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>🎓</span>
+
+            <div>
+
+                <small>
+                    Grade 11–12
+                </small>
+
+                <strong id="grade1112Count">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SEARCH -->
+
+    <section class="filter-card">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search name or student ID..."
+        >
+
+
+        <select id="gradeFilter">
+
+            <option value="All">
+                All Grades
+            </option>
+
+            <option value="Grade 9">
+                Grade 9
+            </option>
+
+            <option value="Grade 10">
+                Grade 10
+            </option>
+
+            <option value="Grade 11">
+                Grade 11
+            </option>
+
+            <option value="Grade 12">
+                Grade 12
+            </option>
+
+        </select>
+
+
+        <select id="genderFilter">
+
+            <option value="All">
+                All Gender
+            </option>
+
+            <option value="Male">
+                Male
+            </option>
+
+            <option value="Female">
+                Female
+            </option>
+
+        </select>
+
+    </section>
+
+
+
+    <!-- STUDENT TABLE -->
+
+    <section class="table-card">
+
+        <div class="table-title">
+
+            <div>
+
+                <h2>
+                    Student List
+                </h2>
+
+                <p>
+                    Registered students
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>#</th>
+
+                        <th>Student ID</th>
+
+                        <th>Name</th>
+
+                        <th>Gender</th>
+
+                        <th>Grade</th>
+
+                        <th>Section</th>
+
+                        <th>Parent</th>
+
+                        <th>Phone</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="studentsTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ADD / EDIT MODAL -->
+
+<div
+    class="modal"
+    id="studentModal"
+>
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Student
+                </h2>
+
+                <p>
+                    Enter student information
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <form id="studentForm">
+
+
+            <input
+                type="hidden"
+                id="editId"
+            >
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Example: KSS001"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Student full name"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Gender
+                    </label>
+
+                    <select id="gender" required>
+
+                        <option value="">
+                            Select gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Grade
+                    </label>
+
+                    <select id="grade" required>
+
+                        <option value="">
+                            Select grade
+                        </option>
+
+                        <option value="Grade 9">
+                            Grade 9
+                        </option>
+
+                        <option value="Grade 10">
+                            Grade 10
+                        </option>
+
+                        <option value="Grade 11">
+                            Grade 11
+                        </option>
+
+                        <option value="Grade 12">
+                            Grade 12
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Section
+                    </label>
+
+                    <input
+                        type="text"
+                        id="section"
+                        placeholder="Example: 9-2"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Parent / Guardian
+                    </label>
+
+                    <input
+                        type="text"
+                        id="parent"
+                        placeholder="Parent name"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="09xxxxxxxx"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Student
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script src="js/students.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+</body>
+
+</html>

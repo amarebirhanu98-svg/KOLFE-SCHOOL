@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Subjects | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./css/subjects.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     TOP BAR
+========================================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            KSS
+        </div>
+
+        <div class="brand-text">
+
+            <strong>
+                A.KOLFE
+            </strong>
+
+            <small>
+                SECONDARY SCHOOL
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">
+            AB
+        </div>
+
+        <div class="admin-text">
+
+            <strong>
+                AMARE BIRHANU
+            </strong>
+
+            <small>
+                Administrator
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Subjects
+            </h1>
+
+            <p>
+                Manage subjects taught at A.Kolfe Secondary School
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="addSubjectBtn"
+        >
+            + Add Subject
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================
+         STATISTICS
+    ====================================== -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📚
+            </div>
+
+            <div>
+
+                <small>
+                    Total Subjects
+                </small>
+
+                <strong id="totalSubjects">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <small>
+                    Grades Covered
+                </small>
+
+                <strong>
+                    9–12
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                👨‍🏫
+            </div>
+
+            <div>
+
+                <small>
+                    Teachers Assigned
+                </small>
+
+                <strong id="assignedTeachers">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📅
+            </div>
+
+            <div>
+
+                <small>
+                    Academic Year
+                </small>
+
+                <strong>
+                    2019 E.C.
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         SEARCH / FILTER
+    ====================================== -->
+
+    <section class="filter-card">
+
+
+        <div class="search-box">
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search subject or teacher..."
+            >
+
+        </div>
+
+
+        <select id="gradeFilter">
+
+            <option value="All">
+                All Grades
+            </option>
+
+            <option value="Grade 9">
+                Grade 9
+            </option>
+
+            <option value="Grade 10">
+                Grade 10
+            </option>
+
+            <option value="Grade 11">
+                Grade 11
+            </option>
+
+            <option value="Grade 12">
+                Grade 12
+            </option>
+
+        </select>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         SUBJECT CARDS
+    ====================================== -->
+
+    <section
+        class="subject-grid"
+        id="subjectGrid"
+    >
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     ADD / EDIT MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="subjectModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Subject
+                </h2>
+
+                <p>
+                    Enter subject information
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-btn"
+                id="closeModal"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form id="subjectForm">
+
+
+            <!-- Hidden ID -->
+
+            <input
+                type="hidden"
+                id="editId"
+            >
+
+
+
+            <!-- SUBJECT NAME -->
+
+            <div class="form-group">
+
+                <label for="subjectName">
+                    Subject Name
+                </label>
+
+                <input
+                    type="text"
+                    id="subjectName"
+                    placeholder="Example: Biology"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- CODE + GRADE -->
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="subjectCode">
+                        Subject Code
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subjectCode"
+                        placeholder="Example: BIO"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="grade">
+                        Grade
+                    </label>
+
+                    <select
+                        id="grade"
+                        required
+                    >
+
+                        <option value="">
+                            Select grade
+                        </option>
+
+                        <option value="Grade 9">
+                            Grade 9
+                        </option>
+
+                        <option value="Grade 10">
+                            Grade 10
+                        </option>
+
+                        <option value="Grade 11">
+                            Grade 11
+                        </option>
+
+                        <option value="Grade 12">
+                            Grade 12
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TEACHER -->
+
+            <div class="form-group">
+
+                <label for="teacher">
+                    Teacher
+                </label>
+
+                <input
+                    type="text"
+                    id="teacher"
+                    placeholder="Subject teacher"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- PERIODS -->
+
+            <div class="form-group">
+
+                <label for="periods">
+                    Weekly Periods
+                </label>
+
+                <input
+                    type="number"
+                    id="periods"
+                    min="1"
+                    max="20"
+                    value="4"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Subject
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="./js/subjects.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | Kolfe Secondary School</title>
+
+    <link rel="stylesheet" href="css/teacher-dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="school-brand">
+            <div class="logo">KSS</div>
+
+            <div>
+                <strong>KOLFE</strong>
+                <small>SECONDARY SCHOOL</small>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <a href="#" class="active">
+                🏠 <span>Dashboard</span>
+            </a>
+
+            <a href="#">
+                👤 <span>My Profile</span>
+            </a>
+
+            <a href="#">
+                👨‍🎓 <span>My Students</span>
+            </a>
+
+            <a href="#">
+                📚 <span>My Classes</span>
+            </a>
+
+            <a href="#">
+                📅 <span>Timetable</span>
+            </a>
+
+            <a href="#">
+                📝 <span>Assignments</span>
+            </a>
+
+            <a href="#">
+                📊 <span>Grades</span>
+            </a>
+
+            <a href="#">
+                ✅ <span>Attendance</span>
+            </a>
+
+            <a href="#">
+                📢 <span>Announcements</span>
+            </a>
+
+            <a href="#">
+                💬 <span>Messages</span>
+            </a>
+
+            <a href="#">
+                🔔 <span>Notifications</span>
+                <b>4</b>
+            </a>
+
+        </nav>
+
+
+        <button class="logout" id="logoutButton">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <button class="menu" id="menuButton">
+                ☰
+            </button>
+
+            <div>
+                <h1>Teacher Dashboard</h1>
+                <p>2019 E.C. Academic Year</p>
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="notification">
+                    🔔
+                    <span>4</span>
+                </button>
+
+
+                <div class="teacher-profile">
+
+                    <div class="avatar">
+                        AT
+                    </div>
+
+                    <div>
+                        <strong>Mr. Abebe Teacher</strong>
+                        <small>Mathematics Teacher</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+
+            <!-- WELCOME -->
+            <div class="welcome">
+
+                <div>
+
+                    <p>WELCOME BACK 👋</p>
+
+                    <h2>Good Morning, Teacher!</h2>
+
+                    <span>
+                        Manage your classes, students, grades and assignments.
+                    </span>
+
+                </div>
+
+                <div class="welcome-icon">
+                    👨‍🏫
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="icon blue">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+                        <small>Total Students</small>
+                        <strong>100</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="icon green">
+                        📚
+                    </div>
+
+                    <div>
+                        <small>My Classes</small>
+                        <strong>4</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="icon gold">
+                        📝
+                    </div>
+
+                    <div>
+                        <small>Assignments</small>
+                        <strong>8</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="icon red">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <small>Pending Grades</small>
+                        <strong>12</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+            <div class="card">
+
+                <div class="card-title">
+
+                    <div>
+                        <h3>Quick Actions</h3>
+                        <p>Frequently used teacher tools</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button>
+                        <span>✅</span>
+                        Take Attendance
+                    </button>
+
+                    <button>
+                        <span>📊</span>
+                        Enter Grades
+                    </button>
+
+                    <button>
+                        <span>📝</span>
+                        Create Assignment
+                    </button>
+
+                    <button>
+                        <span>📢</span>
+                        Post Announcement
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TWO COLUMNS -->
+            <div class="grid">
+
+
+                <!-- MY CLASSES -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>My Classes</h3>
+                            <p>Classes assigned to you</p>
+                        </div>
+
+                        <button>View All</button>
+
+                    </div>
+
+
+                    <div class="class-list">
+
+                        <div class="class-item">
+
+                            <div class="class-icon">
+                                📐
+                            </div>
+
+                            <div>
+                                <strong>Grade 9 - Section 1</strong>
+                                <small>Mathematics</small>
+                            </div>
+
+                            <span>25 Students</span>
+
+                        </div>
+
+
+                        <div class="class-item">
+
+                            <div class="class-icon">
+                                📐
+                            </div>
+
+                            <div>
+                                <strong>Grade 9 - Section 2</strong>
+                                <small>Mathematics</small>
+                            </div>
+
+                            <span>27 Students</span>
+
+                        </div>
+
+
+                        <div class="class-item">
+
+                            <div class="class-icon">
+                                📐
+                            </div>
+
+                            <div>
+                                <strong>Grade 10 - Section 1</strong>
+                                <small>Mathematics</small>
+                            </div>
+
+                            <span>24 Students</span>
+
+                        </div>
+
+
+                        <div class="class-item">
+
+                            <div class="class-icon">
+                                📐
+                            </div>
+
+                            <div>
+                                <strong>Grade 10 - Section 2</strong>
+                                <small>Mathematics</small>
+                            </div>
+
+                            <span>24 Students</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TODAY -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Today's Classes</h3>
+                            <p>Your teaching schedule</p>
+                        </div>
+
+                        <button>Full Timetable</button>
+
+                    </div>
+
+
+                    <div class="today-class">
+
+                        <div class="time">
+                            8:00
+                            <small>8:45</small>
+                        </div>
+
+                        <div>
+                            <strong>Mathematics</strong>
+                            <small>Grade 9 - Section 1</small>
+                        </div>
+
+                        <span>Room 12</span>
+
+                    </div>
+
+
+                    <div class="today-class">
+
+                        <div class="time">
+                            10:00
+                            <small>10:45</small>
+                        </div>
+
+                        <div>
+                            <strong>Mathematics</strong>
+                            <small>Grade 9 - Section 2</small>
+                        </div>
+
+                        <span>Room 12</span>
+
+                    </div>
+
+
+                    <div class="today-class">
+
+                        <div class="time">
+                            1:00
+                            <small>1:45</small>
+                        </div>
+
+                        <div>
+                            <strong>Mathematics</strong>
+                            <small>Grade 10 - Section 1</small>
+                        </div>
+
+                        <span>Room 15</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STUDENTS -->
+            <div class="card">
+
+                <div class="card-title">
+
+                    <div>
+                        <h3>My Students</h3>
+                        <p>Recently viewed students</p>
+                    </div>
+
+                    <button>View All Students</button>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Student</th>
+                                <th>ID</th>
+                                <th>Grade</th>
+                                <th>Attendance</th>
+                                <th>Average</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <strong>Abebe Student</strong>
+                                </td>
+
+                                <td>KSS-0001</td>
+
+                                <td>Grade 9</td>
+
+                                <td>94%</td>
+
+                                <td>82%</td>
+
+                                <td>
+                                    <span class="status good">
+                                        Good
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Hana Student</strong>
+                                </td>
+
+                                <td>KSS-0002</td>
+
+                                <td>Grade 9</td>
+
+                                <td>96%</td>
+
+                                <td>89%</td>
+
+                                <td>
+                                    <span class="status excellent">
+                                        Excellent
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Dawit Student</strong>
+                                </td>
+
+                                <td>KSS-0003</td>
+
+                                <td>Grade 9</td>
+
+                                <td>87%</td>
+
+                                <td>74%</td>
+
+                                <td>
+                                    <span class="status warning">
+                                        Needs Support
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ASSIGNMENTS + ANNOUNCEMENTS -->
+            <div class="grid">
+
+
+                <!-- ASSIGNMENTS -->
+                <div class="card">
+
+                    <div class="card-title">
+
+                        <div>
+                            <h3>Recent Assignments</h3>
+                            <p>Your latest

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Timetable | A.Kolfe Secondary School
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/timetable.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            KSS
+        </div>
+
+        <div class="brand-text">
+
+            <strong>
+                A.KOLFE
+            </strong>
+
+            <small>
+                SECONDARY SCHOOL
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="avatar">
+            AB
+        </div>
+
+        <div class="admin-text">
+
+            <strong>
+                AMARE BIRHANU
+            </strong>
+
+            <small>
+                Administrator
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Timetable
+            </h1>
+
+            <p>
+                Manage the school weekly class timetable
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="addLessonBtn"
+        >
+            + Add Lesson
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================
+         CONTROLS
+    ======================================= -->
+
+    <section class="control-card">
+
+
+        <div class="control-group">
+
+            <label>
+                Grade
+            </label>
+
+            <select id="gradeFilter">
+
+                <option value="Grade 9">
+                    Grade 9
+                </option>
+
+                <option value="Grade 10">
+                    Grade 10
+                </option>
+
+                <option value="Grade 11">
+                    Grade 11
+                </option>
+
+                <option value="Grade 12">
+                    Grade 12
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="control-group">
+
+            <label>
+                Class
+            </label>
+
+            <select id="classFilter">
+
+                <option value="1">
+                    Class 1
+                </option>
+
+                <option value="2">
+                    Class 2
+                </option>
+
+                <option value="3">
+                    Class 3
+                </option>
+
+                <option value="4">
+                    Class 4
+                </option>
+
+                <option value="5">
+                    Class 5
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="academic-year">
+
+            <span>
+                Academic Year
+            </span>
+
+            <strong>
+                2019 E.C.
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         TIMETABLE
+    ======================================= -->
+
+    <section class="timetable-card">
+
+
+        <div class="table-title">
+
+            <div>
+
+                <h2 id="timetableTitle">
+                    Grade 9 — Class 1
+                </h2>
+
+                <p>
+                    Weekly timetable
+                </p>
+
+            </div>
+
+
+            <div class="lesson-count">
+
+                <strong id="lessonCount">
+                    0
+                </strong>
+
+                <span>
+                    Lessons
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="table-wrapper">
+
+            <table class="timetable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Time
+                        </th>
+
+                        <th>
+                            Monday
+                        </th>
+
+                        <th>
+                            Tuesday
+                        </th>
+
+                        <th>
+                            Wednesday
+                        </th>
+
+                        <th>
+                            Thursday
+                        </th>
+
+                        <th>
+                            Friday
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="timetableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         LEGEND
+    ======================================= -->
+
+    <section class="legend-card">
+
+        <strong>
+            How to use
+        </strong>
+
+        <span>
+            Click a lesson to edit it.
+        </span>
+
+        <span>
+            Use the delete button inside a lesson to remove it.
+        </span>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     ADD / EDIT LESSON MODAL
+========================================== -->
+
+<div
+    class="modal"
+    id="lessonModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Lesson
+                </h2>
+
+                <p>
+                    Enter timetable information
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-btn"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <form id="lessonForm">
+
+
+            <input
+                type="hidden"
+                id="editId"
+            >
+
+
+            <!-- GRADE -->
+
+            <div class="form-group">
+
+                <label>
+                    Grade
+                </label>
+
+                <select
+                    id="grade"
+                    required
+                >
+
+                    <option value="">
+                        Select grade
+                    </option>
+
+                    <option value="Grade 9">
+                        Grade 9
+                    </option>
+
+                    <option value="Grade 10">
+                        Grade 10
+                    </option>
+
+                    <option value="Grade 11">
+                        Grade 11
+                    </option>
+
+                    <option value="Grade 12">
+                        Grade 12
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- CLASS -->
+
+            <div class="form-group">
+
+                <label>
+                    Class
+                </label>
+
+                <select
+                    id="classNumber"
+                    required
+                >
+
+                    <option value="">
+                        Select class
+                    </option>
+
+                    <option value="1">
+                        Class 1
+                    </option>
+
+                    <option value="2">
+                        Class 2
+                    </option>
+
+                    <option value="3">
+                        Class 3
+                    </option>
+
+                    <option value="4">
+                        Class 4
+                    </option>
+
+                    <option value="5">
+                        Class 5
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- DAY -->
+
+            <div class="form-group">
+
+                <label>
+                    Day
+                </label>
+
+                <select
+                    id="day"
+                    required
+                >
+
+                    <option value="">
+                        Select day
+                    </option>
+
+                    <option value="Monday">
+                        Monday
+                    </option>
+
+                    <option value="Tuesday">
+                        Tuesday
+                    </option>
+
+                    <option value="Wednesday">
+                        Wednesday
+                    </option>
+
+                    <option value="Thursday">
+                        Thursday
+                    </option>
+
+                    <option value="Friday">
+                        Friday
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PERIOD -->
+
+            <div class="form-group">
+
+                <label>
+                    Period
+                </label>
+
+                <select
+                    id="period"
+                    required
+                >
+
+                    <option value="">
+                        Select period
+                    </option>
+
+                    <option value="1">
+                        Period 1 — 8:00–8:45
+                    </option>
+
+                    <option value="2">
+                        Period 2 — 8:45–9:30
+                    </option>
+
+                    <option value="3">
+                        Period 3 — 9:30–10:15
+                    </option>
+
+                    <option value="4">
+                        Period 4 — 10:15–11:00
+                    </option>
+
+                    <option value="5">
+                        Period 5 — 11:30–12:15
+                    </option>
+
+                    <option value="6">
+                        Period 6 — 12:15–1:00
+                    </option>
+
+                    <option value="7">
+                        Period 7 — 1:00–1:45
+                    </option>
+
+                    <option value="8">
+                        Period 8 — 1:45–2:30
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- SUBJECT -->
+
+            <div class="form-group">
+
+                <label>
+                    Subject
+                </label>
+
+                <select
+                    id="subject"
+                    required
+                >
+
+                    <option value="">
+                        Select subject
+                    </option>
+
+                    <option value="Mathematics">
+                        Mathematics
+                    </option>
+
+                    <option value="Biology">
+                        Biology
+                    </option>
+
+                    <option value="English">
+                        English
+                    </option>
+
+                    <option value="Chemistry">
+                        Chemistry
+                    </option>
+
+                    <option value="Physics">
+                        Physics
+                    </option>
+
+                    <option value="HPE">
+                        HPE
+                    </option>
+
+                    <option value="Citizenship">
+                        Citizenship
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- TEACHER -->
+
+            <div class="form-group">
+
+                <label>
+                    Teacher
+                </label>
+
+                <input
+                    type="text"
+                    id="teacher"
+                    placeholder="Teacher name"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Lesson
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script src="js/timetable.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/logout.js"></script>
+</body>
+
+</html>

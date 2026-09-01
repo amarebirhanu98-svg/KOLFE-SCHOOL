@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Kolfe Secondary School</title>
+
+    <link rel="stylesheet" href="css/student-dashboard.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="school-logo">KSS</div>
+
+            <div>
+                <strong>KOLFE</strong>
+                <small>SECONDARY SCHOOL</small>
+            </div>
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <a href="#" class="nav-link active" data-page="dashboard">
+                <span>🏠</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-link" data-page="profile">
+                <span>👤</span>
+                My Profile
+            </a>
+
+            <a href="#" class="nav-link" data-page="classes">
+                <span>📚</span>
+                My Classes
+            </a>
+
+            <a href="#" class="nav-link" data-page="timetable">
+                <span>📅</span>
+                Timetable
+            </a>
+
+            <a href="#" class="nav-link" data-page="assignments">
+                <span>📝</span>
+                Assignments
+            </a>
+
+            <a href="#" class="nav-link" data-page="grades">
+                <span>📊</span>
+                Results & Grades
+            </a>
+
+            <a href="#" class="nav-link" data-page="attendance">
+                <span>✅</span>
+                Attendance
+            </a>
+
+            <a href="#" class="nav-link" data-page="fees">
+                <span>💳</span>
+                Fees & Payments
+            </a>
+
+            <a href="#" class="nav-link" data-page="announcements">
+                <span>📢</span>
+                Announcements
+            </a>
+
+            <a href="#" class="nav-link" data-page="notifications">
+                <span>🔔</span>
+                Notifications
+                <span class="notification-count">3</span>
+            </a>
+
+        </nav>
+
+
+        <button class="logout-button" id="logoutButton">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+
+            <div>
+                <h1 id="pageTitle">Student Dashboard</h1>
+                <p>2019 E.C. Academic Year</p>
+            </div>
+
+
+            <div class="student-header">
+
+                <button class="notification-button">
+                    🔔
+                    <span>3</span>
+                </button>
+
+                <div class="student-mini-profile">
+
+                    <div class="avatar">
+                        AS
+                    </div>
+
+                    <div>
+                        <strong>Abebe Student</strong>
+                        <small>Grade 9 - Section 2</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard Content -->
+        <section class="dashboard-page" id="dashboardPage">
+
+
+            <!-- Welcome -->
+            <div class="welcome-card">
+
+                <div>
+                    <p>WELCOME BACK 👋</p>
+
+                    <h2>Hello, Abebe!</h2>
+
+                    <span>
+                        Here's what's happening with your school activities.
+                    </span>
+                </div>
+
+                <div class="welcome-icon">
+                    🎓
+                </div>
+
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📚
+                    </div>
+
+                    <div>
+                        <span>My Subjects</span>
+                        <strong>7</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✅
+                    </div>
+
+                    <div>
+                        <span>Attendance</span>
+                        <strong>94%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon gold">
+                        📊
+                    </div>
+
+                    <div>
+                        <span>Average Grade</span>
+                        <strong>82%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        📝
+                    </div>
+
+                    <div>
+                        <span>Pending Assignments</span>
+                        <strong>3</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Main Grid -->
+            <div class="content-grid">
+
+
+                <!-- Assignments -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recent Assignments</h3>
+                            <p>Your latest school assignments</p>
+                        </div>
+
+                        <button class="view-button">
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="assignment-list">
+
+                        <div class="assignment">
+
+                            <div class="assignment-icon">
+                                🧬
+                            </div>
+
+                            <div class="assignment-info">
+                                <strong>Biology Assignment</strong>
+                                <span>Cell Structure</span>
+                            </div>
+
+                            <div class="deadline">
+                                <small>Due</small>
+                                <strong>Sep 05</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="assignment">
+
+                            <div class="assignment-icon">
+                                📐
+                            </div>
+
+                            <div class="assignment-info">
+                                <strong>Mathematics Homework</strong>
+                                <span>Algebra</span>
+                            </div>
+
+                            <div class="deadline">
+                                <small>Due</small>
+                                <strong>Sep 07</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="assignment">
+
+                            <div class="assignment-icon">
+                                ⚗️
+                            </div>
+
+                            <div class="assignment-info">
+                                <strong>Chemistry Report</strong>
+                                <span>Laboratory Work</span>
+                            </div>
+
+                            <div class="deadline">
+                                <small>Due</small>
+                                <strong>Sep 10</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Announcements -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Announcements</h3>
+                            <p>Latest school information</p>
+                        </div>
+
+                        <button class="view-button">
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="announcement-list">
+
+                        <div class="announcement">
+
+                            <div class="announcement-icon">
+                                📢
+                            </div>
+
+                            <div>
+                                <strong>School Examination</strong>
+
+                                <p>
+                                    Examination information has been
+                                    published.
+                                </p>
+
+                                <small>2 hours ago</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="announcement">
+
+                            <div class="announcement-icon">
+                                📅
+                            </div>
+
+                            <div>
+                                <strong>Parents Meeting</strong>
+
+                                <p>
+                                    Parents meeting will be held soon.
+                                </p>
+
+                                <small>Yesterday</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="announcement">
+
+                            <div class="announcement-icon">
+                                🏆
+                            </div>
+
+                            <div>
+                                <strong>Science Competition</strong>
+
+                                <p>
+                                    Students can register for the competition.
+                                </p>
+
+                                <small>3 days ago</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Timetable -->
+            <div class="dashboard-card timetable-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Today's Timetable</h3>
+                        <p>Your classes for today</p>
+                    </div>
+
+                    <button class="view-button">
+                        Full Timetable
+                    </button>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Subject</th>
+                                <th>Teacher</th>
+                                <th>Room</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>8:00 - 8:45</td>
+                                <td>Mathematics</td>
+                                <td>Mr. Teacher</td>
+                                <td>Room 12</td>
+                            </tr>
+
+                            <tr>
+                                <td>8:50 - 9:35</td>
+                                <td>Biology</td>
+                                <td>Ms. Teacher</td>
+                                <td>Lab 2</td>
+                            </tr>
+
+                            <tr>
+                                <td>10:00 - 10:45</td>
+                                <td>English</td>
+                                <td>Mr. Teacher</td>
+                                <td>Room 12</td>
+                            </tr>
+
+                            <tr>
+                                <td>10:50 - 11:35</td>
+                                <td>Physics</td>
+                                <td>Ms. Teacher</td>
+                                <td>Lab 1</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bottom Grid -->
+            <div class="content-grid">
+
+
+                <!-- Grades -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recent Results</h3>
+                            <p>Your latest grades</p>
+                        </div>
+
+                        <button class="view-button">
+                            View Results
+                        </button>
+
+                    </div>
+
+
+                    <div class="grades-list">
+
+                        <div class="grade-row">
+                            <span>Mathematics</span>
+                            <strong>88%</strong>
+                        </div>
+
+                        <div class="grade-row">
+                            <span>Biology</span>
+                            <strong>84%</strong>
+                        </div>
+
+                        <div class="grade-row">
+                            <span>English</span>
+                            <strong>79%</strong>
+                        </div>
+
+                        <div class="grade-row">
+                            <span>Chemistry</span>
+                            <strong>81%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Fees -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Fees</h3>
+                            <p>Current payment status</p>
+                        </div>
+
+                        <button class="view-button">
+                            Details
+                        </button>
+
+                    </div>
+
+
+                    <div class="fee-summary">
+
+                        <div>
+                            <span>Total Fees</span>
+                            <strong>650 ETB</strong>
+                        </div>
+
+                        <div>
+                            <span>Paid</span>
+                            <strong class="paid">400 ETB</strong>
+                        </div>
+
+                        <div>
+                            <span>Remaining</span>
+                            <strong class="remaining">250 ETB</strong>
+                        </div>
+
+                    </div>
+
+
+                    <button class="pay-button">
+                        💳 Make Payment
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/student-dashboard.js"></script>
+
+</body>
+</html>
