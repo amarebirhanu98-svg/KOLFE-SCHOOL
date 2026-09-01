@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: #f4f6fa;
+
+    color: #172b4d;
+}
+
+
+.login-page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* SCHOOL SIDE */
+
+.school-section {
+    background: #062653;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+
+.school-content {
+    max-width: 450px;
+}
+
+
+.school-logo,
+.mobile-logo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+.school-logo {
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: #f5b400;
+
+    color: #062653;
+
+    font-size: 30px;
+}
+
+
+.school-content h1 {
+    font-size: 40px;
+
+    letter-spacing: 2px;
+}
+
+
+.school-content h2 {
+    color: #f5b400;
+
+    font-size: 20px;
+
+    margin-top: 5px;
+}
+
+
+.school-content p {
+    margin-top: 35px;
+
+    font-size: 18px;
+}
+
+
+.school-content span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #bdc9dc;
+
+    font-size: 13px;
+}
+
+
+/* LOGIN SIDE */
+
+.login-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+.login-box {
+    width: 100%;
+
+    max-width: 430px;
+}
+
+
+.login-box h2 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+    color: #8993a6;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #dce2ea;
+
+    border-radius: 7px;
+
+    padding: 0 14px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+
+.form-group input:focus {
+    border-color: #07529f;
+}
+
+
+/* PASSWORD */
+
+.password-box {
+    position: relative;
+}
+
+
+.password-box input {
+    padding-right: 50px;
+}
+
+
+.password-box button {
+    position: absolute;
+
+    right: 8px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+/* OPTIONS */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    font-size: 12px;
+}
+
+
+.login-options label {
+    display: flex;
+
+    gap: 6px;
+
+    align-items: center;
+
+    color: #69758a;
+}
+
+
+.login-options a {
+    color: #07529f;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #07529f;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.login-btn:hover {
+    background: #063f7a;
+}
+
+
+/* ERROR */
+
+.error-message {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: #b32626;
+
+    font-size: 12px;
+}
+
+
+/* DEMO */
+
+.demo {
+    margin-top: 35px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    background: #f7f8fa;
+
+    border: 1px solid #e4e8ef;
+
+    font-size: 11px;
+
+    color: #69758a;
+}
+
+
+.demo strong {
+    display: block;
+
+    color: #172b4d;
+
+    margin-bottom: 7px;
+}
+
+
+.demo p {
+    margin-top: 4px;
+}
+
+
+.demo b {
+    color: #07529f;
+}
+
+
+/* MOBILE LOGO */
+
+.mobile-logo {
+    display: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+
+    .school-section {
+        min-height: 240px;
+    }
+
+
+    .school-logo {
+        width: 70px;
+        height: 70px;
+
+        font-size: 22px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .school-content h1 {
+        font-size: 28px;
+    }
+
+
+    .school-content h2 {
+        font-size: 15px;
+    }
+
+
+    .school-content p {
+        margin-top: 15px;
+
+        font-size: 14px;
+    }
+
+
+    .login-section {
+        padding: 35px 20px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .school-section {
+        min-height: 200px;
+    }
+
+
+    .school-content span {
+        display: none;
+    }
+
+
+    .login-box h2 {
+        font-size: 25px;
+    }
+
+}
